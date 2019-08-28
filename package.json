@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "workspaces": [
+    "gatsby-theme-ui",
+    "gatsby-theme-ui-child",
+    "gatsby-theme-blog",
+    "site"
+  ]
+}
