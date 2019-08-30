@@ -2,9 +2,16 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
   html,
-  body {
+  body,
+  #___gatsby,
+  div[role="group"][tabindex] {
     width: 100%;
-    font-size: 10px;
+    height: 100%;
+  }
+
+  div[role="group"][tabindex] {
+    display: flex;
+    flex-direction: column;
   }
 
   * {
@@ -13,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    line-height: 1.5;
+  line-height: ${({ theme }) => theme.lineHeights[2]};
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     color: #535358;

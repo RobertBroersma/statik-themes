@@ -15,18 +15,24 @@ export const theme = {
   fontWeights: {
     light: 300,
     normal: 400,
-    bold: 600,
+    bold: 700,
   },
   colors: {
     bodytext: '#24292e',
     black: '#1b1f23',
     white: '#fff',
-    gray: ['#F9FAFB', '#F4F6F8', '#DFE3E8', '#C4CDD5'],
-    blackfade15: 'rgba(27, 31, 35, 0.15)',
-    blackfade20: 'rgba(27, 31, 35, 0.20)',
-    blackfade35: 'rgba(27, 31, 35, 0.35)',
-    blackfade50: 'rgba(27, 31, 35, 0.5)',
-    whitefade15: 'rgba(255, 255, 255, 0.15)',
+    blue: '#2fb7ed',
+    gray: [
+      '#fafafa',
+      '#fcfcfc',
+      '#e1e1e1',
+      '#d1d1d1',
+      '#bbbbbb',
+      '#586069',
+      '#444d56',
+      '#2f363d',
+      '#24292e',
+    ],
     state: {
       error: '#d73a49',
       failure: '#d73a49',
@@ -37,22 +43,10 @@ export const theme = {
     },
   },
   borders: [0, '1px solid'],
-  fontSizes: [12, 14, 16, 20, 24, 32, 40, 48],
-  lineHeights: {
-    condensedUltra: 1,
-    condensed: 1.25,
-    default: 1.5,
-  },
+  lineHeights: [1, 1.2, 1.5],
   radii: [0, 3, 6],
-  shadows: {
-    small: '0 1px 1px rgba(27, 31, 35, 0.1)',
-    medium: '0 1px 5px rgba(27, 31, 35, 0.15)',
-    large: '0 1px 15px rgba(27, 31, 35, 0.15)',
-    'extra-large': '0 10px 50px rgba(27, 31, 35, 0.07)',
-    formControl: 'rgba(27, 31, 35, 0.075) 0px 1px 2px inset',
-    formControlFocus: 'rgba(3, 102, 214, 0.3) 0px 0px 0px 0.2em',
-  },
-  space: [0, 4, 8, 16, 24, 32, 40, 48, 64, 80, 96, 112, 128],
+  fontSizes: [12, 18, 20, 24, 30, 36, 40],
+  space: [0, 4, 8, 16, 32, 64, 128, 256],
 }
 
 export const breaks = {

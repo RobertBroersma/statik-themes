@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { typography, color } from 'styled-system'
 
 export const Note = styled.span`
   letter-spacing: 2px;
@@ -8,7 +9,7 @@ export const Note = styled.span`
 
 const shared = css`
   margin: 0;
-  line-height: 1.2;
+  line-height: ${({ theme }) => theme.lineHeights[1]};
   color: #2f313e;
 
   * + & {
@@ -30,24 +31,24 @@ const shared = css`
 export const H1 = styled.h1`
   ${shared}
 
-  font-size: 4rem;
+  font-size: ${({ theme }) => theme.fontSizes[6]};
 `
 export const H2 = styled.h2`
   ${shared}
 
-  font-size: 3.6rem;
+  font-size: ${({ theme }) => theme.fontSizes[5]};
 `
 export const H3 = styled.h3`
   ${shared}
 
-  font-size: 3rem;
+  font-size: ${({ theme }) => theme.fontSizes[4]};
 `
 export const H4 = styled.h4`
   ${shared}
 
-  font-size: 2.4rem;
+  font-size: ${({ theme }) => theme.fontSizes[3]};
 `
-export const Paragraph = styled.p`
+export const Text = styled.p`
   margin: 0;
 
   * + & {
@@ -60,5 +61,8 @@ export const Paragraph = styled.p`
   h4 + & {
     margin-top: 1.5rem;
   }
+
+  ${typography}
+  ${color}
 `
 export const Link = styled.a``

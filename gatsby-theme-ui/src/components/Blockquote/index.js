@@ -9,7 +9,7 @@ const BlockquoteWrapper = styled.blockquote`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0;
+  margin: ${({ theme }) => theme.space[4]}px 0;
 
   ${breaks.large} {
     margin-left: calc(360px - 45vw);
@@ -42,7 +42,7 @@ const Cite = styled.cite`
 const Border = styled.div`
   height: 1px;
   width: 200px;
-  background: ${({ theme }) => theme.colors.gray.lighter};
+  background: ${({ theme }) => theme.colors.gray[3]};
 `
 
 export const Blockquote = ({ children, by, ...rest }) => (

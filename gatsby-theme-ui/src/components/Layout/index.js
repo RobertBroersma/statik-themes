@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 
 import { GlobalStyles } from '../../globalStyles'
-import { H1, H2, H3, H4, Paragraph, Note } from '../../typography'
+import { H1, H2, H3, H4, Text, Note } from '../../typography'
 import { Code } from '../Code'
 import { Video } from '../Video'
 import { Box } from '../Box'
@@ -18,12 +18,13 @@ export const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <MDXProvider
+        style={{ display: 'flex' }}
         components={{
           h1: H1,
           h2: H2,
           h3: H3,
           h4: H4,
-          p: Paragraph,
+          p: Text,
           ul: props => <List as="ul" {...props} />,
           ol: props => <List as="ol" {...props} />,
           li: ListItem,
@@ -39,9 +40,9 @@ export const Layout = ({ children }) => {
           Video,
         }}
       >
-        <Header />
         <GlobalStyles />
-        <Box as="main" pt={8} pb={12}>
+        <Header />
+        <Box as="main" pt={5} pb={6} flex="1 0 auto">
           {children}
         </Box>
         <Footer />
