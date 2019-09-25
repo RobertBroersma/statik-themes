@@ -1,0 +1,24 @@
+{
+  "name": "@statikly/ui-kit",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "@styled-system/css": "^5.0.23",
+    "nuka-carousel": "^4.5.12",
+    "pigeon-maps": "^0.14.0",
+    "pigeon-marker": "^0.3.4",
+    "react-spring": "^8.0.27",
+    "styled-components": "^4.3.2",
+    "styled-system": "^5.1.1"
+  }
+}

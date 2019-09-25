@@ -1,11 +1,13 @@
 module.exports = {
   plugins: [
-    '@statikly/gatsby-theme-ui-child',
     {
-      resolve: '@statikly/gatsby-theme-blog',
+      resolve: '@statikly/gatsby-theme-builder',
       options: {
-        basePath: '/blog',
+        pagesPath: `${__dirname}/_pages`,
+        configPath: `${__dirname}/_config`,
+        staticPath: `${__dirname}/static/images/uploads`,
       },
     },
+    '@statikly/gatsby-theme-ui',
   ],
 }

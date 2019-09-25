@@ -9,10 +9,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^2.13.79",
-    "@statikly/gatsby-theme-blog": "*",
+    "@statikly/gatsby-theme-builder": "*",
     "@statikly/gatsby-theme-ui": "*",
-    "@statikly/gatsby-theme-ui-child": "*",
+    "gatsby": "^2.13.79",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }

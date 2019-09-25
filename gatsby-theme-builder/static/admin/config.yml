@@ -1,0 +1,61 @@
+---
+media_folder_relative: true
+media_folder: static/images/uploads
+public_folder: /images/uploads
+collections:
+  - label: Pages
+    label_singular: Page
+    name: pages
+    folder: _pages
+    create: true
+    identifier_field: name
+    fields:
+      - label: Template Key
+        name: templateKey
+        widget: hidden
+        default: page
+      - label: Content
+        name: content
+        widget: list
+        types:
+          - label: Header
+            name: header
+            widget: object
+            fields:
+              - label: Slides
+                label_singular: Slide
+                name: slides
+                widget: list
+                fields:
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    options:
+                      - AcceptCr
+                      - Smartphone
+                      - Bag1
+                  - label: Category
+                    name: category
+                    widget: string
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Body
+                    name: body
+                    widget: text
+                  - label: Image
+                    name: image
+                    widget: image
+          - label: Feature
+            name: feature
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Body
+                name: body
+                widget: string
+              - label: Icon
+                name: icon
+                widget: string

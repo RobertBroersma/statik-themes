@@ -2,7 +2,7 @@
   "name": "@statikly/gatsby-theme-ui",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "index.js",
+  "main": "gatsby-config.js",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -19,6 +19,13 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
+    "@styled-system/css": "^5.0.23",
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby-image": "^2.2.19",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-styled-components": "^3.1.5",
+    "nuka-carousel": "^4.5.12",
+    "react-spring": "^8.0.27",
     "styled-components": "^4.3.2",
     "styled-system": "^5.1.1"
   }
