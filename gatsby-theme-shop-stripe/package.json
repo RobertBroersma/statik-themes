@@ -1,0 +1,26 @@
+{
+  "name": "@statikly/gatsby-theme-shop-stripe",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "gatsby-config.js",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.13.79",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.13.79",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "gatsby-plugin-react-helmet": "^3.1.10",
+    "gatsby-plugin-stripe": "^1.2.3",
+    "react-helmet": "^5.2.1"
+  }
+}

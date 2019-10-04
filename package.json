@@ -5,6 +5,10 @@
     "gatsby-theme-ui",
     "gatsby-theme-builder",
     "gatsby-theme-blog",
+    "gatsby-theme-shop-core",
+    "gatsby-theme-shop-stripe",
+    "gatsby-theme-shop-paypal",
+    "gatsby-theme-source-json",
     "site"
   ],
   "resolutions": {

@@ -47,7 +47,7 @@ module.exports = opts => {
       {
         resolve: `gatsby-transformer-yaml`,
         options: {
-          typeName: ({ node }) => console.log(node.name) || node.name,
+          typeName: ({ node }) => node.name,
         },
       },
       {

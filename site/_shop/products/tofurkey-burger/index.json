@@ -1,0 +1,10 @@
+{
+  "title": "Tofurkey Burger",
+  "sku": "sku_FvdZuj8t7BhBu0",
+  "description": "Golden buns with a crispy breaded tofu burger.",
+  "available": true,
+  "price": "12.50",
+  "categories": ["burger"],
+  "tags": ["vegan"],
+  "images": ["./tofurkey-burger.jpg"]
+}

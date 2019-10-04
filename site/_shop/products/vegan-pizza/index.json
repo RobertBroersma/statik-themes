@@ -1,0 +1,30 @@
+{
+  "title": "Vegan Pizza",
+  "sku": "sku_FvdaO3u4eU9iJj",
+  "description": "Sourdough crust, tomato sauce and a choice of 3 different kinds of vegan cheese.",
+  "available": true,
+  "price": "3.95",
+  "categories": ["deli"],
+  "tags": ["vegan"],
+  "images": ["./pizza.jpg"],
+  "variants": [
+    {
+      "id": "sheese-1",
+      "title": "Mozarella",
+      "price": "3.95",
+      "available": true
+    },
+    {
+      "id": "sheese-2",
+      "title": "Cheddar",
+      "price": "3.95",
+      "available": true
+    },
+    {
+      "id": "sheese-3",
+      "title": "Feta",
+      "price": "3.95",
+      "available": true
+    }
+  ]
+}

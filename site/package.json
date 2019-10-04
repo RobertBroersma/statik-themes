@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@statikly/gatsby-theme-builder": "*",
+    "@statikly/gatsby-theme-shop-core": "*",
+    "@statikly/gatsby-theme-shop-paypal": "*",
+    "@statikly/gatsby-theme-shop-stripe": "*",
+    "@statikly/gatsby-theme-source-json": "*",
     "@statikly/gatsby-theme-ui": "*",
     "gatsby": "^2.13.79",
     "react": "^16.9.0",
