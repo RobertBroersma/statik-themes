@@ -5,6 +5,83 @@ import { components } from '../components'
 
 const pageComponents = Object.values(components).map(block => block.widget)
 
+const pageCollection = {
+  label: 'Pages',
+  label_singular: 'Page',
+  name: 'pages',
+  folder: '_pages',
+  create: true,
+  identifier_field: 'title',
+  fields: [
+    {
+      label: 'Template Key',
+      name: 'templateKey',
+      widget: 'hidden',
+      default: 'page',
+    },
+    {
+      label: 'Title',
+      name: 'title',
+      widget: 'string',
+    },
+    {
+      label: 'Slug',
+      name: 'slug',
+      widget: 'string',
+    },
+    {
+      label: 'Content',
+      name: 'content',
+      widget: 'list',
+      types: pageComponents,
+    },
+  ],
+}
+
+const portfolioCollection = {
+  label: 'Portfolio',
+  label_singular: 'Project',
+  name: 'portfolio',
+  folder: '_portfolio',
+  create: true,
+  identifier_field: 'title',
+  fields: [
+    {
+      label: 'Template Key',
+      name: 'templateKey',
+      widget: 'hidden',
+      default: 'portfolio',
+    },
+    {
+      label: 'Title',
+      name: 'title',
+      widget: 'string',
+    },
+    {
+      label: 'Featured Image',
+      name: 'featuredImage',
+      widget: 'image',
+    },
+    {
+      label: 'description',
+      name: 'description',
+      widget: 'text',
+    },
+    {
+      label: 'Slug',
+      name: 'slug',
+      widget: 'string',
+    },
+    {
+      label: 'Content',
+      name: 'content',
+      widget: 'list',
+      types: pageComponents,
+      // TODO: add default portfolio page template
+    },
+  ],
+}
+
 const config = createConfig({
   media_folder_relative: true,
   media_folder: 'static/images/uploads',
@@ -72,38 +149,8 @@ const config = createConfig({
         },
       ],
     },
-    {
-      label: 'Pages',
-      label_singular: 'Page',
-      name: 'pages',
-      folder: '_pages',
-      create: true,
-      identifier_field: 'name',
-      fields: [
-        {
-          label: 'Template Key',
-          name: 'templateKey',
-          widget: 'hidden',
-          default: 'page',
-        },
-        {
-          label: 'Title',
-          name: 'title',
-          widget: 'string',
-        },
-        {
-          label: 'Slug',
-          name: 'slug',
-          widget: 'string',
-        },
-        {
-          label: 'Content',
-          name: 'content',
-          widget: 'list',
-          types: pageComponents,
-        },
-      ],
-    },
+    pageCollection,
+    portfolioCollection,
   ],
 })
 
