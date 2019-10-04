@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { space } from 'styled-system'
 import css from '@styled-system/css'
 import { Box, Container } from '../../Box'
 import { Text } from '../../Typography'
+import { Button } from '../../Button'
 
 const modeMap = {
   light: css({
@@ -31,23 +31,6 @@ const Card = styled.div(
   ({ mode }) => modeMap[mode],
 )
 
-const Button = styled.button(
-  css({
-    backgroundColor: 'primary.700',
-    height: 48,
-    paddingLeft: 5,
-    paddingRight: 5,
-    color: 'white.base',
-    border: 0,
-    borderRadius: '24px',
-    boxShadow: 'small',
-    textTransform: 'uppercase',
-    letterSpacing: 1.25,
-    cursor: 'pointer',
-  }),
-  space,
-)
-
 const Shadow = styled.div(({ shadow }) =>
   css({
     boxShadow: shadow,
@@ -68,13 +51,17 @@ export const PriceTable14 = ({ items }) => (
             flex="1 0 420px"
             flexBasis={['100%', '50%', '33.333%']}
             maxWidth={420}
-            minWidth={380}
+            minWidth={320}
           >
             <Shadow shadow="medium">
               <Shadow shadow="large">
                 <Shadow shadow="xlarge">
                   <Card key={item.title} mode={item.mode}>
-                    <Box display="flex" justifyContent="space-between">
+                    <Box
+                      display="flex"
+                      flexWrap="wrap"
+                      justifyContent="space-between"
+                    >
                       <Text fontSize={5} fontWeight="bold">
                         {item.title}
                       </Text>
@@ -90,7 +77,13 @@ export const PriceTable14 = ({ items }) => (
                       ))}
                     </Box>
                     <Box mt="auto">
-                      <Button mt={10}>{item.buttonText}</Button>
+                      <Button
+                        mt={10}
+                        variant={item.mode === 'dark' ? 'secondary' : 'primary'}
+                        mode={item.mode === 'dark' ? 'light' : 'dark'}
+                      >
+                        {item.buttonText}
+                      </Button>
                       <Text
                         mt={5}
                         color={item.mode === 'dark' ? 'white.600' : 'gray.600'}

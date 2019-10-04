@@ -3,11 +3,18 @@ const fs = require('fs')
 const withDefaults = require('./withDefaults')
 
 exports.onPreBootstrap = ({ reporter }, options) => {
-  const { pagesPath, configPath, staticPath } = withDefaults(options)
+  const { pagesPath, portfolioPath, configPath, staticPath } = withDefaults(
+    options,
+  )
 
   if (!fs.existsSync(pagesPath)) {
     reporter.info(`creating the ${pagesPath} directory`)
     fs.mkdirSync(pagesPath)
+  }
+
+  if (!fs.existsSync(portfolioPath)) {
+    reporter.info(`creating the ${portfolioPath} directory`)
+    fs.mkdirSync(portfolioPath)
   }
 
   if (!fs.existsSync(staticPath)) {

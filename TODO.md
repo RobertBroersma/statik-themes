@@ -22,7 +22,7 @@ Team: 0/25
 
 Testimonials: 0/24
 
-Pricing Table: 0/20
+Pricing Table: 1/20
 
 Call to Action: 0/24
 
@@ -38,3 +38,35 @@ Contact: 1/20
 
 Footer: 0/31
 In Progress: Footer #15
+
+Concept:
+
+gatsby-theme-builder-core
+
+- Creates Types
+
+gatsby-theme-portfolio-core
+
+- Creates Types
+
+gatsby-theme-ecommerce-core
+
+- Creates Types
+
+gatsby-theme-netlify-cms
+
+- Implement Types in onCreateNode
+
+gatsby-theme-prismic
+
+- Implement Types in onCreateNode
+
+gatsby-theme-ui
+
+- Shadows style components
+
+Can I share? ->
+Types for gatsby (GraphQL / GraphQL JS)
+Types for netlify cms
+Types for prismic
+Types for contentful, etc.

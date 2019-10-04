@@ -45,6 +45,13 @@ module.exports = opts => {
         },
       },
       {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          path: options.portfolioPath,
+          name: 'portfolio',
+        },
+      },
+      {
         resolve: `gatsby-transformer-yaml`,
         options: {
           typeName: ({ node }) => console.log(node.name) || node.name,
