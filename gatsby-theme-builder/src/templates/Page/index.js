@@ -30,6 +30,9 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         content {
+          title
+          body
+          icon
           location {
             lat
             lng
