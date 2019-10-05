@@ -17,6 +17,7 @@
     "nuka-carousel": "^4.5.12",
     "pigeon-maps": "^0.14.0",
     "pigeon-marker": "^0.3.4",
+    "react-css-collapse": "^3.6.0",
     "react-spring": "^8.0.27",
     "styled-components": "^4.3.2",
     "styled-system": "^5.1.1"

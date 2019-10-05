@@ -2,6 +2,8 @@ const path = require('path')
 const fs = require('fs')
 const withDefaults = require('./withDefaults')
 
+const gql = x => x
+
 exports.onPreBootstrap = ({ reporter }, options) => {
   const { pagesPath, portfolioPath, configPath, staticPath } = withDefaults(
     options,
@@ -26,6 +28,34 @@ exports.onPreBootstrap = ({ reporter }, options) => {
     reporter.info(`creating the ${configPath} directory`)
     fs.mkdirSync(configPath, { recursive: true })
   }
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = gql`
+    type BuilderPage implements Node {
+      id: ID!
+      content: [Block!]
+    }
+
+    interface Block {
+      id: ID!
+    }
+
+    type Header30 implements Block {
+      id: ID!
+      title: String!
+      body: String!
+      icon: String!
+    }
+
+    # type MarkdownRemark implements BuilderPage & Node {
+    #   id: ID!
+    #   content: [Block!]
+    # }
+  `
+
+  createTypes(typeDefs)
 }
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -117,7 +147,13 @@ const walkArray = async (arr, iteratee, ignoreKeys = []) => {
   })
 }
 
-exports.onCreateNode = async ({ node, getNode }, options) => {
+const crypto = require('crypto')
+exports.onCreateNode = async (
+  { node, actions, getNode, createNodeId },
+  options,
+) => {
+  const { createNode, createParentChildLink } = actions
+
   const commonProps = ['id', '_PARENT', 'parent', 'children', 'internal']
 
   let nodeAbsPath
@@ -136,5 +172,32 @@ exports.onCreateNode = async ({ node, getNode }, options) => {
     nodeAbsPath = getNode(node.parent).absolutePath
 
     await walkObject(node, iteratee, commonProps)
+  }
+
+  if (node.internal.type === `MarkdownRemark`) {
+    // console.log('The one', node.frontmatter.content)
+    const parent = getNode(node.parent)
+    createNode({
+      // ...node,
+      content: node.frontmatter.content,
+      // Required fields.
+      id: createNodeId(`${node.id} >>> BuilderPage`),
+      parent: node.id,
+      children: [],
+      internal: {
+        type: `BuilderPage`,
+        contentDigest: crypto
+          .createHash(`md5`)
+          .update(JSON.stringify(node))
+          .digest(`hex`),
+        content: JSON.stringify(node),
+        description: `Builder Page`,
+      },
+    })
+
+    createParentChildLink({
+      parent: parent,
+      child: node,
+    })
   }
 }

@@ -1,7 +1,7 @@
 ---
 templateKey: Page
 title: Home
-slug: /
+slug: /kek
 content:
   - title: Je hebt al een website voor eenmalig €399!
     body: >-

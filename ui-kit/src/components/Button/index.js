@@ -7,16 +7,35 @@ const modeMap = {
   light: 200,
 }
 
+const shapeMap = {
+  rounded: '24px',
+  square: 2,
+}
+
+const sizeMap = {
+  normal: 48,
+  large: 56,
+}
+
 export const Button = styled.button(
-  ({ variant = 'primary', mode = 'dark' }) =>
+  ({
+    variant = 'primary',
+    mode = 'dark',
+    shape = 'rounded',
+    size = 'normal',
+  }) =>
     css({
       backgroundColor: `${variant}.${modeMap[mode]}`,
       color: 'white.base',
-      height: 48,
+      display: 'inline-flex',
+      alignItems: 'center',
+      textDecoration: 'none',
+      height: sizeMap[size],
       paddingLeft: 5,
       paddingRight: 5,
       border: 0,
-      borderRadius: '24px',
+      flex: `1 1 auto`,
+      borderRadius: shapeMap[shape],
       boxShadow: 'small',
       textTransform: 'uppercase',
       letterSpacing: 1.25,

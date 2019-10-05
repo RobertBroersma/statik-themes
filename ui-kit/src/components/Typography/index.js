@@ -12,6 +12,14 @@ const shared = css({
   margin: 0,
   lineHeight: 1,
   color: 'bodytext',
+  background: 0,
+  border: 0,
+  width: '100%',
+  outline: 0,
+  textAlign: 'inherit',
+  '&:focus': {
+    color: 'primary.600',
+  },
 })
 
 export const H1 = styled.h1(

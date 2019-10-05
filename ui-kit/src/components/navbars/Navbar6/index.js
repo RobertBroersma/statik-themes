@@ -27,7 +27,7 @@ export const Navbar6 = ({ menuItems, logo }) => (
   <Box px={2}>
     <Container>
       <Box
-        height={120}
+        height={[80, 80, 120]}
         display="flex"
         justifyContent="space-between"
         alignItems="center"

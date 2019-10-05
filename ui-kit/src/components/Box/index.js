@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space, color, layout, flexbox } from 'styled-system'
+import { space, color, layout, flexbox, typography } from 'styled-system'
 import { css } from '@styled-system/css'
 
 export const Box = styled.div`
@@ -9,6 +9,7 @@ export const Box = styled.div`
   ${color}
   ${layout}
   ${flexbox}
+  ${typography}
 `
 
 export const Container = styled(Box)(({ size = 1200 }) =>

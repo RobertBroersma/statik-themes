@@ -5,6 +5,7 @@ export const Header30 = props => <Component {...props} />
 
 export default Header30
 
+// TODO: widget
 export const widget = {
   label: 'Header #30',
   name: 'Header30',

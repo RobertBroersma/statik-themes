@@ -45,4 +45,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
+  .react-css-collapse-transition {
+    transition: height 250ms cubic-bezier(.4, 0, .2, 1);
+  }
 `
