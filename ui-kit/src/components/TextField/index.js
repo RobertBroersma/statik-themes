@@ -16,7 +16,6 @@ export const Input = styled.input(({ hasAddon }) =>
     paddingLeft: 3,
     paddingRight: 3,
     paddingTop: 2,
-    fontSize: 1,
     fontFamily: 'normal',
     fontSize: 2,
     transition: '0.2s ease all',

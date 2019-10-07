@@ -19,3 +19,5 @@ export { Header30 } from './src/components/headers/Header30'
 export { Faq6 } from './src/components/faqs/Faq6'
 
 export { Cta2 } from './src/components/ctas/Cta2'
+
+export { Testimonials7 } from './src/components/testimonials/Testimonials7'

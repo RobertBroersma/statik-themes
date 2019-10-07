@@ -8,19 +8,26 @@ export const Note = styled.span`
   text-transform: uppercase;
 `
 
-const shared = css({
-  margin: 0,
-  lineHeight: 1,
-  color: 'bodytext',
+const textAsButton = css({
   background: 0,
   border: 0,
   width: '100%',
   outline: 0,
+  padding: 0,
   textAlign: 'inherit',
   '&:focus': {
-    color: 'primary.600',
+    color: 'secondary.200',
   },
 })
+
+const shared = css(
+  {
+    margin: 0,
+    lineHeight: 1,
+    color: 'bodytext',
+  },
+  textAsButton,
+)
 
 export const H1 = styled.h1(
   css({
@@ -43,6 +50,7 @@ export const H2 = styled.h2(
 export const H3 = styled.h3(
   css({
     fontSize: [5, 5, 6],
+    fontWeight: 'normal',
   }),
   shared,
   layout,
@@ -73,6 +81,7 @@ export const Text = styled.p(
   css({
     margin: 0,
   }),
+  textAsButton,
   typography,
   layout,
   space,

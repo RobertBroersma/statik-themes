@@ -8,6 +8,7 @@ import {
   Cta2,
   Button,
   TextField,
+  Testimonials7,
 } from '@statikly/ui-kit'
 
 const Home = () => (
@@ -78,6 +79,47 @@ const Home = () => (
           }
         />
       }
+    />
+
+    <Testimonials7
+      title="What People Say"
+      slides={[
+        {
+          avatar: 'http://placehold.it/180x180?text=Avatar 1',
+          name: 'Brent Hudson',
+          personTitle: 'Lawyer',
+          body:
+            'Under the Articles of Confederation, the national government had the power to issue commands to the several sovereign states, but it had no authority to govern individuals directly.',
+        },
+        {
+          avatar: 'http://placehold.it/180x180?text=Avatar 2',
+          name: 'Hud Brenson',
+          personTitle: 'Attorney',
+          body:
+            'The national government had the power to issue commands to the several sovereign states, but it had no authority to govern individuals directly, under the Articles of Confederation.',
+        },
+        {
+          avatar: 'http://placehold.it/180x180?text=Avatar 3',
+          name: 'Brud Henson',
+          personTitle: 'Counselor',
+          body:
+            'The national government had the power to issue commands to the several sovereign states, under the Articles of Confederation, but it had no authority to govern individuals directly.',
+        },
+        {
+          avatar: 'http://placehold.it/180x180?text=Avatar 4',
+          name: 'Hens Brudson',
+          personTitle: 'Advocate',
+          body:
+            'But it had no authority to govern individuals directly, The national government had the power to issue commands to the several sovereign states, under the Articles of Confederation. Extra text to make it longer than the others. But it had no authority to govern individuals directly, The national government had the power to issue commands to the several sovereign states, under the Articles of Confederation. Extra text to make it longer than the others.',
+        },
+        {
+          avatar: 'http://placehold.it/180x180?text=Avatar 5',
+          name: 'Bren Husron',
+          personTitle: 'Jurist',
+          body:
+            'The national government had the power to issue commands to the several sovereign states, under the Articles of Confederation, but it had no authority to govern individuals directly. Extra',
+        },
+      ]}
     />
   </Layout>
 )
