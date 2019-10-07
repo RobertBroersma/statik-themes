@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'
-import { useTransition, animated, useSpring, interpolate } from 'react-spring'
+import React, { useState } from 'react'
+import { useTransition, animated, useSpring } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
 import styled from 'styled-components'
 import css from '@styled-system/css'
@@ -157,29 +157,19 @@ const CarouselCircle = styled.button(({ active }) =>
   }),
 )
 
-// These two are just helpers, they curate spring data, values that are later being interpolated into css
-const to = {
-  x: 0,
-  y: -4,
-  scale: 1,
-  rot: -10 + Math.random() * 20,
-  delay: 100,
-}
-const from = { x: 0, rot: 0, scale: 1.5, y: -1000 }
-
 // TODO: Make use of gatsby image
 // TODO: Implement arrows
 export const Testimonials7 = ({ title, slides }) => {
   const [index, setIndex] = useState(0)
-  // const [{ x, dir }, set] = useState(0)
+  const [dir, setDir] = useState(0)
 
-  const [{ x, dir }, set] = useSpring(() => ({ x: 0, dir: 0 }))
+  const [springProps, set] = useSpring(() => ({ x: 0, dir: 0 }))
   const bind = useDrag(
     ({ down, movement: [mx], direction: [xDir], velocity }) => {
       const trigger = velocity > 0.2 || Math.abs(mx) > 500
       const dir = xDir < 0 ? -1 : 1
 
-      let x = down ? mx * 0.2 : 0
+      let x = down ? mx * 0.3 : 0
 
       if (!down && trigger) {
         const next = index - dir
@@ -190,19 +180,17 @@ export const Testimonials7 = ({ title, slides }) => {
         } else {
           setIndex(next)
         }
-
-        // x = (200 + window.innerWidth) * dir
       }
 
-      set({ x, dir, delay: undefined, config: { friction: 50, tension: 500 } })
+      setDir(dir)
+      set({ x })
     },
   )
 
   const contentTransitions = useTransition(slides[index], item => item.name, {
-    from: { opacity: 0, x: 100 },
+    from: { opacity: 0, x: -dir * 100 },
     enter: { opacity: 1, x: 0 },
-    leave: { opacity: 0, x: 100 },
-    update: { x },
+    leave: { opacity: 0, x: dir * 100 },
   })
 
   return (
@@ -244,17 +232,10 @@ export const Testimonials7 = ({ title, slides }) => {
               <Content css={css({ opacity: 0 })} slide={slides[index]} />
               {contentTransitions.map(({ props, item, key }) => (
                 <Absolute key={key}>
-                  <animated.div
-                    style={{
-                      opacity: props.opacity,
-                      x: interpolate(
-                        [props.x, x, dir],
-                        (x1, x2, dir) => x1 + x2 * dir,
-                      ),
-                    }}
-                    key={key}
-                  >
-                    <Content slide={item} />
+                  <animated.div style={springProps}>
+                    <animated.div style={props} key={key}>
+                      <Content slide={item} />
+                    </animated.div>
                   </animated.div>
                 </Absolute>
               ))}
