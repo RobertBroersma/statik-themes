@@ -6,8 +6,11 @@ import css from '@styled-system/css'
 
 import { Box, Container } from '../../Box'
 import { H3, Text } from '../../Typography'
+import { CarouselPrevious, CarouselNext, CarouselCircle } from '../../Carousel'
 
-const Avatar = styled.img(
+const Avatar = styled.img.attrs({
+  draggable: false,
+})(
   css({
     borderRadius: '50%',
     width: [100, 120, 180],
@@ -140,23 +143,6 @@ const Content = ({ slide, ...rest }) => (
   </Box>
 )
 
-const CarouselCircle = styled.button(({ active }) =>
-  css({
-    width: 8,
-    height: 8,
-    padding: 0,
-    borderRadius: '50%',
-    outline: 0,
-    border: 0,
-    cursor: 'pointer',
-    backgroundColor: active ? 'gray.800' : 'gray.400',
-    transition: '.2s ease all',
-    '&:focus': {
-      backgroundColor: 'secondary.200',
-    },
-  }),
-)
-
 // TODO: Make use of gatsby image
 // TODO: Implement arrows
 export const Testimonials7 = ({ title, slides }) => {
@@ -211,9 +197,27 @@ export const Testimonials7 = ({ title, slides }) => {
             mt={6}
             height={[100, 120, 180]}
             width={1}
+            display="flex"
             justifyContent="center"
+            alignItems="center"
           >
-            <Relative css={css({ display: 'flex', justifyContent: 'center' })}>
+            <CarouselPrevious
+              display={['none', 'block', 'block']}
+              variant="arrow"
+              onClick={() =>
+                setIndex(index <= 0 ? slides.length - 1 : index - 1)
+              }
+            />
+            <Relative
+              css={css({
+                display: 'flex',
+                flex: '0 0 300px',
+                flexBasis: [300, 400, 600],
+                width: [100, 200],
+                height: [100, 120, 180],
+                justifyContent: 'center',
+              })}
+            >
               {slides.map((item, i) => (
                 <Absolute
                   key={item.name}
@@ -226,8 +230,15 @@ export const Testimonials7 = ({ title, slides }) => {
                 </Absolute>
               ))}
             </Relative>
+            <CarouselNext
+              display={['none', 'block', 'block']}
+              variant="arrow"
+              onClick={() =>
+                setIndex(index >= slides.length - 1 ? 0 : index + 1)
+              }
+            />
           </Box>
-          <Box mt={8} width={1} maxWidth={800}>
+          <Box mt={[5, 5, 8]} width={1} maxWidth={800}>
             <Relative>
               <Content css={css({ opacity: 0 })} slide={slides[index]} />
               {contentTransitions.map(({ props, item, key }) => (
@@ -241,7 +252,7 @@ export const Testimonials7 = ({ title, slides }) => {
               ))}
             </Relative>
           </Box>
-          <Box mt={8}>
+          <Box mt={[5, 5, 8]}>
             {slides.map((slide, i) => (
               <CarouselCircle
                 key={slide.name}
